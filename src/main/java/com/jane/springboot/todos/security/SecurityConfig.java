@@ -59,7 +59,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http.authorizeHttpRequests( configurer -> {
             configurer
-                    .requestMatchers("/swagger-ui/**", "/v3-api-docs/**",
+                    .requestMatchers("/api/auth/**", "/swagger-ui/**", "/v3/api-docs/**",
                             "/swagger-resources/**", "/webjars/**", "/docs").permitAll();
 
         });
