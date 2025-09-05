@@ -3,10 +3,7 @@ package com.jane.springboot.todos.controller;
 import com.jane.springboot.todos.response.UserResponse;
 import com.jane.springboot.todos.service.UserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.nio.file.AccessDeniedException;
 
@@ -24,4 +21,10 @@ public class UserController {
     public UserResponse getUserInfo() throws AccessDeniedException {
         return userService.getUserInfo();
     }
+
+    @DeleteMapping
+    public void deleteUser() throws AccessDeniedException {
+        userService.deleteUser();
+    }
+
 }
