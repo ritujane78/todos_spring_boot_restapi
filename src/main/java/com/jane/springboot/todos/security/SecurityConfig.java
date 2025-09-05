@@ -60,7 +60,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests( configurer -> {
             configurer
                     .requestMatchers("/api/auth/**", "/swagger-ui/**", "/v3/api-docs/**",
-                            "/swagger-resources/**", "/webjars/**", "/docs").permitAll();
+                            "/swagger-resources/**", "/webjars/**", "/docs").permitAll().anyRequest().authenticated();
 
         });
 

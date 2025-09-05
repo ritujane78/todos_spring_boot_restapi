@@ -28,7 +28,7 @@ public class AuthenticationController {
         authenticationService.register(registerRequest);
     }
 
-    @Operation(summary = "login a user", description = "authentica if the provided email and password is of a user")
+    @Operation(summary = "login a user", description = "authenticate if the provided email and password is of a user")
     @ResponseStatus(HttpStatus.OK)
     @PostMapping("/login")
     public AuthenticationResponse login(@Valid @RequestBody AuthenticationRequest authRequest){
