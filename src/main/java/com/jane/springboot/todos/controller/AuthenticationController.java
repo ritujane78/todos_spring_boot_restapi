@@ -11,7 +11,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-@Tag(name = "Authentication REST Api Endpoints", description = "Operations related to register & login")
+@Tag(name = "Authentication REST API Endpoints", description = "Operations related to register & login")
 @RequestMapping("/api/auth")
 @RestController
 public class AuthenticationController {
