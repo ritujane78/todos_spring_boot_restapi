@@ -1,8 +1,10 @@
 package com.jane.springboot.todos.controller;
 
+import com.jane.springboot.todos.request.PasswordUpdateRequest;
 import com.jane.springboot.todos.response.UserResponse;
 import com.jane.springboot.todos.service.UserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.nio.file.AccessDeniedException;
@@ -25,6 +27,11 @@ public class UserController {
     @DeleteMapping
     public void deleteUser() throws AccessDeniedException {
         userService.deleteUser();
+    }
+
+    @PutMapping("/password")
+    public void updatePassword(@Valid @RequestBody PasswordUpdateRequest passwordUpdateRequest) throws Exception{
+        userService.updatePassword(passwordUpdateRequest);
     }
 
 }
