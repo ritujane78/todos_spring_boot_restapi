@@ -21,14 +21,14 @@ public class AuthenticationController {
         this.authenticationService = authenticationService;
     }
 
-    @Operation(summary = "Registr a user", description = "Create a new user in database.")
+    @Operation(summary = "Register a user", description = "Create a new user in database.")
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/register")
     public void registerUser(@Valid @RequestBody RegisterRequest registerRequest) throws Exception{
         authenticationService.register(registerRequest);
     }
 
-    @Operation(summary = "login a user", description = "authenticate if the provided email and password is of a user")
+    @Operation(summary = "Login a user", description = "authenticate if the provided email and password is of a user")
     @ResponseStatus(HttpStatus.OK)
     @PostMapping("/login")
     public AuthenticationResponse login(@Valid @RequestBody AuthenticationRequest authRequest){

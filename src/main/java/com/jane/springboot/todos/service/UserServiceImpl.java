@@ -6,22 +6,23 @@ import com.jane.springboot.todos.repository.UserRepository;
 import com.jane.springboot.todos.request.PasswordUpdateRequest;
 import com.jane.springboot.todos.response.UserResponse;
 import com.jane.springboot.todos.util.FindAuthenticatedUser;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.nio.file.AccessDeniedException;
 
 @Service
 public class UserServiceImpl implements UserService{
-    private UserRepository userRepository;
-    private FindAuthenticatedUser findAuthenticatedUser;
-
-    private PasswordEncoder passwordEncoder;
+    private final UserRepository userRepository;
+    private final FindAuthenticatedUser findAuthenticatedUser;
+    private final PasswordEncoder passwordEncoder;
 
     public UserServiceImpl(UserRepository userRepository, FindAuthenticatedUser findAuthenticatedUser, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
