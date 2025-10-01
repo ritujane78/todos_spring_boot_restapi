@@ -1,28 +1,33 @@
-#todos
+# Todos Project
 
-This is a basic todos project.
-A signed in user can create, read, and update TODOs.
-A user with ADMIN role can promote other employees to admins who can also Delete other non-admin users. 
+## Project Overview
+This is a basic **Todos** project.  
+A signed-in user can **create**, **read**, and **update** TODOs.
 
-User and Todos have one to many relation.
-The table authorities is embedded to User.
-Authoroties can be EMPLOYEE and/or ADMIN.
+A user with the **ADMIN** role can:
+- Promote other employees to admin.
+- Delete other non-admin users.
 
-MySQL database is used.
+### Data Model
+- **User ↔ Todos:** One-to-many relationship.
+- **Authorities:** Embedded within User.  
+  Authorities can be `EMPLOYEE` and/or `ADMIN`.
 
-Through Docker, MYSQL instance is run in port 3307.
+### Database
+- **MySQL** is used.
+- MySQL instance runs through **Docker** on port `3307`.
 
-The password is encrypted using 'bcrypt' algorithm and thn saved in the database.
-    
+### Security
+- Passwords are encrypted using the **bcrypt** algorithm before being saved to the database.
 
+---
 
-Accomplishments
+## Accomplishments
+- Created REST APIs / Web Services using `@RestController` in Spring.
+- Implemented **JSON** and **HTTP messaging**.
+- Installed and configured REST client tool: **Swagger**.
+- Built CRUD interface to the database with Spring REST.
+- Created and used **JWTs** for authentication and authorization.
+- Handled roles and admin status.
 
-Create REST APIs  / Web Services with @RestController using Spring.
-Implement JSON and HTTP messaging.
-Install REST Client tool: Swagger
-Build a CRUD interface to the database with Spring REST.
-Create and use JWTs for authentication and authorization.
-Handle roles and admin status.
-
-
+---
